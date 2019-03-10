@@ -1,0 +1,3 @@
+
+
+export const JWT = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFiY0BtYWlsLmNvbSIsInVzZXJfaWQiOjEsImV4cCI6MTU1MjMyMTY4MX0.ov7_llsnGhoAH2r5H6byWNzLRAGlNw_psCQzB8158fA";
