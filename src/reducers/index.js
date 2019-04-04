@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 
-import postReducer from './PostReducer';
 
+import postReducer from './PostReducer';
+import tableReducer from './TableReducer';
 
 export default combineReducers({
-    posts: postReducer
+    posts: postReducer,
+    table: tableReducer
 })

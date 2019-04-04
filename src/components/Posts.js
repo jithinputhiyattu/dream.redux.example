@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { fetchPost } from '../actions/PostActions';
 import { Media } from 'react-bootstrap';
 import './Posts.scss';
+import SinglePost from './single-post/SinglePost';
 
 class Posts extends Component {
 
@@ -27,15 +28,7 @@ class Posts extends Component {
     render() {
 
         const postItem = this.props.posts.map(post => (
-
-            <Media key={post.id} className="-custome">
-                <Media.Body>
-                    <h5>{post.name}</h5>
-                    <h6>{post.id}</h6>
-                    <p>{post.description}</p>
-                </Media.Body>
-            </Media>
-
+            <SinglePost key={post.id}  data={post}></SinglePost>
         ));
         return (
             <div>

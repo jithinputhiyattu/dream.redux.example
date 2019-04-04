@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
 import { Table } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { getMemembers } from './../../actions/TableActions';
+class TableComponent extends Component {
 
-export default class TableComponent extends Component {
+    componentWillMount() {
+        this.props.getMemembers();
+    }
 
     constructor(props) {
         super(props);
-        this.state = {
+        console.dir(props);
+        this.state = 
+        
+        {
 
-            tableHeader: ["#", "First Name", "Last Name", "Age"],
+            tableHeader: ["#", "First Name", "Last Name", "Age"]
 
-            tableData: [
+           /* tableData: [
                 { firstName: "Jithin", lastName: "Puthiyattu", age: "28" },
                 { firstName: "Nithin", lastName: "Puthiyattu", age: "23" },
                 { firstName: "Suthin", lastName: "Puthiyattu", age: "20" },
                 { firstName: "Anusha", lastName: "Puthiyattu", age: "24" },
                 { firstName: "Ajitha", lastName: "Puthiyattu", age: "48" }
-            ]
+            ]*/
         };
     }
 
@@ -24,7 +32,7 @@ export default class TableComponent extends Component {
             <td key={key}> {header}</td>
         ));
 
-        let tableData = this.state.tableData.map((rowData, key ) => (
+        let tableData = this.props.tableData.map((rowData, key ) => (
             
             <tr key={key}>
                 <td>{key + 1}</td>
@@ -45,3 +53,15 @@ export default class TableComponent extends Component {
         )
     }
 }
+
+
+const mapStateToProps = (state) => {
+    console.dir(state);
+    return {
+        tableData: state.table.tableData,
+        newPost: state.table.row
+    };
+};
+
+
+export default connect(mapStateToProps, { getMemembers })(TableComponent);

@@ -10,12 +10,10 @@ import Header from '../Header';
 class MainRouter extends Component {
     render() {
         return (
-            <Router>
-                <Route Route path="/" component={Header} history={browserHistory}>
-                    <Route path="posts" component={Posts}></Route>
-                    <Route path="family" component={TableComponent}></Route>
-                </Route>
-            </Router>
+           <div>
+               <PostForm></PostForm>
+               <Posts></Posts>
+            </div>
         )
     }
 }
